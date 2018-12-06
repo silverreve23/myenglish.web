@@ -35,7 +35,7 @@ class Repeats extends Model{
                 'word' => $dataWord->word,
                 'trans' => $dataWord->trans,
                 'user' => $user,
-                'created_at' => date("Y-m-d i:h:s")
+                'created_at' => date("Y-m-d h:i:s")
             ));
             return $dataWord;
         }
