@@ -14,4 +14,4 @@ Auth::routes();
 
 Route::get('/', function(){return view('welcome');});
 Route::get('home', function(){return view('admin.dashboard');});
-Route::resource('repeats', 'Admin\\RepeatsController');
+Route::resource('repeats', 'Admin\\RepeatsController')->middleware('auth');

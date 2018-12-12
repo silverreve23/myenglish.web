@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware('api')->get('/get-word/{email}', 'APIController@getWord');
+Route::middleware('api')->get('/get-period/{email}', 'APIController@getPeriod');
 Route::middleware('api')->get('/update-status/success/{word}/{email}', 'APIController@successPriority');
 Route::middleware('api')->get('/update-status/fails/{word}/{email}', 'APIController@failsPriority');
 Route::middleware('api')->get('/check-user/{email}/{name}', 'APIController@checkUser');

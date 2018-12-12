@@ -22,4 +22,8 @@ class APIController extends Controller{
         $checkData = User::checkUser($email, $name, $passwd);
         return response()->json($checkData);
     }
+    public function getPeriod($email){
+        $user = User::getUser($email);
+        return response($user->period ?? 5);
+    }
 }

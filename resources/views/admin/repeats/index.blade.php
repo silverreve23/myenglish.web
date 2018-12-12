@@ -36,7 +36,7 @@
                                 <tbody>
                                 @foreach($repeats as $item)
                                     <tr>
-                                        <td>{{ $loop->iteration or $item->id }}</td>
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->word }}</td><td>{{ $item->trans }}</td><td>{{ $item->priority }}</td>
                                         <td>
                                             <a href="{{ url('/repeats/' . $item->id) }}" title="View Repeat"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>

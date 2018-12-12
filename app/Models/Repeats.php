@@ -26,7 +26,7 @@ class Repeats extends Model{
         
         $repeatWord = $this
             ->where('user', $user)
-            ->where('priority', '!=', 0)
+            ->where('priority', '>', 0)
             ->inRandomOrder()
             ->first();
         if(!$repeatWord){

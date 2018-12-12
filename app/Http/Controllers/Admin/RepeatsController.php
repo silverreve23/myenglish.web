@@ -18,7 +18,7 @@ class RepeatsController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 5;
+        $perPage = 15;
 
         if (!empty($keyword)) {
             $repeats = Repeat::where('user', auth()->user()->email)

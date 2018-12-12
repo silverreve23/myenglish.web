@@ -10,7 +10,7 @@ class User extends Authenticatable{
     use Notifiable;
     
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'period',
     ];
     protected $hidden = [
         'password', 'remember_token',
@@ -23,5 +23,8 @@ class User extends Authenticatable{
             'name' => $name,
             'password' => bcrypt($passwd)
         ));
+    }
+    protected function getUser($email){
+        return $this->where('email', $email)->first();
     }
 }
