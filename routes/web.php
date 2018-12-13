@@ -13,5 +13,6 @@
 Auth::routes();
 
 Route::get('/', function(){return view('welcome');});
-Route::get('home', function(){return view('admin.dashboard');});
 Route::resource('repeats', 'Admin\\RepeatsController')->middleware('auth');
+Route::get('home/', 'Admin\\UserController@dashboard')->middleware('auth');
+Route::get('change-period/{period}', 'Admin\\UserController@savePeriod')->middleware('auth');

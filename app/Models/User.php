@@ -26,5 +26,10 @@ class User extends Authenticatable{
     }
     protected function getUser($email){
         return $this->where('email', $email)->first();
+    }    
+    protected function changePeriod($period, $user){
+        return $this->where('id', $user)->update(array(
+            'period' => $period
+        ));
     }
 }
