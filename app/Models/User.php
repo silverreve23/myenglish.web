@@ -10,7 +10,8 @@ class User extends Authenticatable{
     use Notifiable;
     
     protected $fillable = [
-        'name', 'email', 'password', 'period',
+        'name', 'email', 'password', 
+        'period', 'studied'
     ];
     protected $hidden = [
         'password', 'remember_token',
@@ -30,6 +31,11 @@ class User extends Authenticatable{
     protected function changePeriod($period, $user){
         return $this->where('id', $user)->update(array(
             'period' => $period
+        ));
+    }    
+    protected function changeAutoChangeKeyLang($value, $user){
+        return $this->where('id', $user)->update(array(
+            'autochangekeylang' => $value == 'true' ? 1 : 0
         ));
     }
 }

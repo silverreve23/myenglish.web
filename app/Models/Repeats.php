@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Words;
+use App\Models\User;
 
 class Repeats extends Model{
     public $tableName = 'repeats';
@@ -17,10 +18,14 @@ class Repeats extends Model{
             ->increment('priority');
     }
     protected function updateSuccess($word, $user){
-        return $this
+        $data = $this
             ->where('user', $user)
             ->where('word', $word)
-            ->decrement('priority');
+            ->first();
+        if($data->priority < 2)
+            User::where('email', $user)
+                ->increment("studied");
+        return $data->decrement('priority');
     }
     protected function getRandomWord($user){
         
@@ -30,7 +35,7 @@ class Repeats extends Model{
             ->inRandomOrder()
             ->first();
         if(!$repeatWord){
-            $dataWord = Words::getRandomWord();
+            $dataWord = Words::getRandomWord($user);
             $this->insert(array(
                 'word' => $dataWord->word,
                 'trans' => $dataWord->trans,

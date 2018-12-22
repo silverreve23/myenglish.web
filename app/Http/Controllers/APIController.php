@@ -25,5 +25,9 @@ class APIController extends Controller{
     public function getPeriod($email){
         $user = User::getUser($email);
         return response($user->period ?? 5);
+    }    
+    public function getAutoChangeKeyLang($email){
+        $user = User::getUser($email);
+        return response($user->autochangekeylang ?? 0);
     }
 }

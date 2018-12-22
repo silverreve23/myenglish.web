@@ -25,9 +25,25 @@
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <th>ID</th><td>{{ $repeat->id }}</td>
+                                        <th>ID</th>
+                                        <td>{{ $repeat->id }}</td>
                                     </tr>
-                                    <tr><th> Word </th><td> {{ $repeat->word }} </td></tr><tr><th> Trans </th><td> {{ $repeat->trans }} </td></tr><tr><th> Priority </th><td> {{ $repeat->priority }} </td></tr>
+                                    <tr>
+                                        <th>Word</th>
+                                        <td>{{ $repeat->word }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Trans</th>
+                                        <td>{{ $repeat->trans }}</td>
+                                    </tr>                                   
+                                    <tr>
+                                        <th>Hint</th>
+                                        <td>{{ $repeat->hint }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Priority</th>
+                                        <td>{{ $repeat->priority }}</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

@@ -30,14 +30,22 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Word</th><th>Trans</th><th>Priority</th><th>Actions</th>
+                                        <th>#</th>
+                                        <th>Word</th>
+                                        <th>Trans</th>
+                                        <th>Hint</th>
+                                        <th>Priority</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($repeats as $item)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->word }}</td><td>{{ $item->trans }}</td><td>{{ $item->priority }}</td>
+                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $item->word }}</td>
+                                        <td>{{ $item->trans }}</td>
+                                        <td>{{ $item->hint }}</td>
+                                        <td>{{ $item->priority }}</td>
                                         <td>
                                             <a href="{{ url('/repeats/' . $item->id) }}" title="View Repeat"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/repeats/' . $item->id . '/edit') }}" title="Edit Repeat"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

@@ -25,7 +25,10 @@ class Repeat extends Model
      *
      * @var array
      */
-    protected $fillable = ['word', 'trans', 'priority', 'user'];
+    protected $fillable = [
+        'word', 'trans', 'priority', 
+        'user', 'hint', 'image'
+    ];
 
     
 }
