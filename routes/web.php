@@ -14,6 +14,7 @@ Auth::routes();
 
 Route::get('/', function(){return view('welcome');});
 Route::resource('repeats', 'Admin\\RepeatsController')->middleware('auth');
+Route::resource('words', 'Admin\\WordsController')->middleware('auth');
 Route::get('home/', 'Admin\\UserController@dashboard')->middleware('auth');
 Route::get('change-period/{period}', 'Admin\\UserController@savePeriod')->middleware('auth');
 Route::get('change-autochangekeylang/{value}', 'Admin\\UserController@saveAutoChangeKeyLang')->middleware('auth');

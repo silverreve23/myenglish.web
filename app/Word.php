@@ -25,7 +25,8 @@ class Word extends Model
      *
      * @var array
      */
-    protected $fillable = ['word', 'trans', 'priority'];
+    protected $fillable = ['word', 'trans', 'hint'];
+    public $timestamps = false;
 
     
 }

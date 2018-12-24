@@ -9,12 +9,17 @@
                     <a href="{{ url('/home') }}">
                         Dashboard
                     </a>
-                </li>               
+                </li>  
+                <li role="presentation">
+                    <a href="{{ url('/words') }}">
+                        Words
+                    </a>
+                </li>
                 <li role="presentation">
                     <a href="{{ url('/repeats') }}">
                         Repeats
                     </a>
-                </li>
+                </li>                
             </ul>
         </div>
     </div>

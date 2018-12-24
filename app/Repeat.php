@@ -27,7 +27,7 @@ class Repeat extends Model
      */
     protected $fillable = [
         'word', 'trans', 'priority', 
-        'user', 'hint', 'image'
+        'hint', 'image'
     ];
 
     
