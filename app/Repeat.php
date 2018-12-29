@@ -25,6 +25,9 @@ class Repeat extends Model
      *
      * @var array
      */
+    public function synonyms(){
+        return $this->hasMany('App\Models\Synonyms', 'word', 'word');
+    }
     protected $fillable = [
         'word', 'trans', 'priority', 
         'hint', 'image'

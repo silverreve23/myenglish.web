@@ -10,8 +10,10 @@
     <title>{{ config('app.name', 'MyEnglish') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/common.js') }}" defer></script>
+    <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/common.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-tagsinput.min.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -19,6 +21,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-tagsinput.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">

@@ -42,8 +42,13 @@
                                 @foreach($repeats as $item)
                                     <tr>
                                         <td>{{ $item->id }}</td>
-                                        <td>{{ $item->word }}</td>
-                                        <td>{{ $item->trans }}</td>
+                                        <td><span class="show-word">{{ $item->word }}</span></td>
+                                        <td>
+                                            <span class="show-trans">{{ $item->trans }}</span><br>
+                                            @foreach($item->synonyms as $synonym)
+                                                <span class="show-synonym">{{ $synonym->synonym }}</span>
+                                            @endforeach
+                                        </td>
                                         <td>{{ $item->hint }}</td>
                                         <td>{{ $item->priority }}</td>
                                         <td>

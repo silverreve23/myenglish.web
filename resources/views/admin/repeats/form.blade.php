@@ -8,6 +8,11 @@
     <textarea class="form-control" rows="5" name="trans" type="textarea" id="trans" >{{ @$repeat->trans ?? ''}}</textarea>
     {!! $errors->first('trans', '<p class="help-block">:message</p>') !!}
 </div>
+<div class="form-group {{ $errors->has('synonyms') ? 'has-error' : ''}}">
+    <label for="trans" class="control-label">{{ 'Synonyms' }}</label><br>
+    <input class="form-control" type="text" name="synonyms" data-role="tagsinput" value="{{ @$synonyms ?? '' }}">
+    {!! $errors->first('synonyms', '<p class="help-block">:message</p>') !!}
+</div>
 <div class="form-group {{ $errors->has('hint') ? 'has-error' : ''}}">
     <label for="hint" class="control-label">{{ 'Hint' }}</label>
     <textarea class="form-control" rows="5" name="hint" type="textarea" id="hint" >{{ @$repeat->hint ?? ''}}</textarea>
