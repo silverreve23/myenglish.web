@@ -21,6 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable();
             $table->integer('studied')->default(0);
             $table->tinyInteger('period')->default(5);
+            $table->tinyInteger('wordlang')->default('en');
+            $table->tinyInteger('translang')->default('ua');
             $table->tinyInteger('autochangekeylang')->default(0);
             $table->rememberToken();
             $table->timestamps();

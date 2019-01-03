@@ -14,7 +14,9 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware('api')->get('/get-word/{email}', 'APIController@getWord');
+Route::middleware('api')->get('/get-word/{email}/{langword}/{transword}', 'APIController@getWord');
 Route::middleware('api')->get('/get-period/{email}', 'APIController@getPeriod');
+Route::middleware('api')->get('/get-translang/{email}', 'APIController@getTransLang');
 Route::middleware('api')->get('/get-autochangekeylang/{email}', 'APIController@getAutoChangeKeyLang');
 Route::middleware('api')->get('/update-status/success/{word}/{email}', 'APIController@successPriority');
 Route::middleware('api')->get('/update-status/fails/{word}/{email}', 'APIController@failsPriority');

@@ -27,22 +27,35 @@ class Repeats extends Model{
                 ->increment("studied");
         return $data->decrement('priority');
     }
-    protected function getRandomWord($user){
-        
+    protected function getRandomWord($user, $wordlang = 'en', $translang = 'ua'){
+        $userdata = User::getUser($user);
+        $wordlang = @$userdata->wordlang ?: $wordlang;
+        $translang = @$userdata->translang ?: $translang;
         $repeatWord = $this
             ->where('user', $user)
+            ->where('wordlang', $wordlang)
+            ->where('translang', $translang)
             ->where('priority', '>', 0)
             ->inRandomOrder()
             ->first();
         if(!$repeatWord){
-            $dataWord = Words::getRandomWord($user);
-            $this->insert(array(
-                'word' => $dataWord->word,
-                'trans' => $dataWord->trans,
-                'user' => $user,
-                'created_at' => date("Y-m-d h:i:s")
-            ));
-            return $dataWord;
+            $dataWord = Words::getRandomWord(
+                $user, 
+                $wordlang, 
+                $translang
+            );
+            if($dataWord){
+                $this->insert(array(
+                    'word' => $dataWord->word,
+                    'trans' => $dataWord->trans,
+                    'wordlang' => $wordlang,
+                    'translang' => $translang,
+                    'user' => $user,
+                    'created_at' => date("Y-m-d h:i:s")
+                ));
+                return $dataWord;
+            }
+            return null;
         }
         return $repeatWord;
     }
