@@ -33,5 +33,8 @@ class APIController extends Controller{
     public function getAutoChangeKeyLang($email){
         $user = User::getUser($email);
         return response($user->autochangekeylang ?? 0);
+    }    
+    public function getUpdate(){
+        return "Update to new version 1.2.4?";
     }
 }

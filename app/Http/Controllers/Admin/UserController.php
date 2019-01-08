@@ -16,9 +16,14 @@ class UserController extends Controller{
     public function dashboard(){
         $period = auth()->user()->period;
         $studied = auth()->user()->studied;
+        $translang = auth()->user()->translang;
+        $translangs = array('ua', 'ru', 'en');
+        $wordlang = auth()->user()->wordlang;
+        $wordlangs = array('ua', 'ru', 'en');
         $autochangekeylang = auth()->user()->autochangekeylang;
         return view('admin.dashboard', compact(
-            'period', 'studied', 'autochangekeylang'
+            'period', 'studied', 'autochangekeylang',
+            'translang', 'wordlang', 'translangs', 'wordlangs'
         ));
     }
 }

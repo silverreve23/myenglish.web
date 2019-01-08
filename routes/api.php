@@ -18,6 +18,7 @@ Route::middleware('api')->get('/get-word/{email}/{langword}/{transword}', 'APICo
 Route::middleware('api')->get('/get-period/{email}', 'APIController@getPeriod');
 Route::middleware('api')->get('/get-translang/{email}', 'APIController@getTransLang');
 Route::middleware('api')->get('/get-autochangekeylang/{email}', 'APIController@getAutoChangeKeyLang');
+Route::middleware('api')->get('/get-update', 'APIController@getUpdate');
 Route::middleware('api')->get('/update-status/success/{word}/{email}', 'APIController@successPriority');
 Route::middleware('api')->get('/update-status/fails/{word}/{email}', 'APIController@failsPriority');
 Route::middleware('api')->get('/check-user/{email}/{name}', 'APIController@checkUser');
