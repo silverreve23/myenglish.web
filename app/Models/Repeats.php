@@ -7,6 +7,8 @@ use App\Models\Words;
 use App\Models\User;
 
 class Repeats extends Model{
+    use Mutators\RepeatsMutators;
+    
     public $tableName = 'repeats';
     protected $fillable = array(
         'word', 'user'
