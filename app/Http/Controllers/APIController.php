@@ -6,7 +6,7 @@ use App\Models\Repeats;
 use App\Models\User;
 
 class APIController extends Controller{
-    public function getWord($user, $wordlang, $translang){
+    public function getWord($user, $wordlang = 'en', $translang = 'ua'){
         $wordData = Repeats::getRandomWord($user, $wordlang, $translang);
         return response()->json($wordData);
     }

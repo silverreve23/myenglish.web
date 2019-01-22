@@ -53,6 +53,7 @@ class Repeats extends Model{
                     'wordlang' => $wordlang,
                     'translang' => $translang,
                     'user' => $user,
+                    'priority' => 0,
                     'created_at' => date("Y-m-d h:i:s")
                 ));
                 return $dataWord;

@@ -30,7 +30,7 @@ class Repeat extends Model
     }
     protected $fillable = [
         'word', 'trans', 'priority', 
-        'hint', 'image'
+        'hint', 'image', 'user'
     ];
 
     

@@ -18,11 +18,11 @@ class CreateRepeatsTable extends Migration
             $table->string('user');
             $table->string('word')->nullable();
             $table->string('trans')->nullable();
-            $table->string('hint')->nullable('no');
+            $table->string('hint')->nullable()->default('no');
             $table->string('image')->nullable();
             $table->tinyInteger('wordlang')->default('en');
             $table->tinyInteger('translang')->default('ua');
-            $table->integer('priority')->default(0);
+            $table->integer('priority')->nullable()->default(0);
             $table->timestamps();
         });
     }
